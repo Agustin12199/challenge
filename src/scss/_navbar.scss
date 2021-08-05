@@ -1,0 +1,39 @@
+.nav-links{
+    width: 15rem;
+    display: flex;
+    justify-content: space-between;
+    .link-item{
+        color: #252525;
+    }
+    .txt {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        position: relative;
+        line-height: 20px;
+        transition: all .4s ease-in-out;
+      }
+      .txt:hover {
+        color: #616161;
+      }
+      
+      .txt:before,
+      .txt:after {
+        width:0;
+        content: "";
+        bottom: -10px;
+        background:#616161;
+        height:1px;
+        position: absolute;
+        transition: width .4s ease;
+      }
+      .txt:before {
+        right: 50%;
+      }
+      .txt:after {
+        left: 50%;
+      }
+      .txt:hover:before,
+      .txt:hover:after {
+        width: 50%;
+      }
+}
