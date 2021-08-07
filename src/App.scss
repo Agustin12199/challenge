@@ -1,6 +1,8 @@
 @import "../node_modules/bulma/bulma.sass";
 @import "./scss/navbar";
 @import "./scss/home";
+@import "./scss/hero";
+@import "./scss/card";
 
 @font-face {
     font-family: 'Mulish', sans-serif; ;
@@ -10,5 +12,23 @@
 .font{
     &.mulish{
         font-family: Mulish;
+    }
+    &-color{
+        color: #252525;
+    }
+}
+.font-w{
+    &-3{
+        font-weight: 300;
+    }
+    &-4{
+        font-weight: 400;
+    }&-5{
+        font-weight: 500;
+    }&-6{
+        font-weight: 600;
+    }
+    &-7{
+        font-weight: 700;
     }
 }
