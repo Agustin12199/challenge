@@ -1,0 +1,63 @@
+.card-container{
+    background-color: #f2f2f2;
+    transition: ease all .25s;
+    &:hover{
+        box-shadow: 4px 4px 5px rgba(56, 56, 56, 0.2);
+    }
+    .card-title{
+        min-height: 7rem;
+    }
+    .width{
+        width: 100%;
+    }
+    .container-price{
+        width: 100%;
+    }
+    .offer{
+        text-decoration: line-through;
+        float: right;
+        &.true{
+            color: #494949b4;
+        }
+        &.false{
+            color: rgba(255, 255, 255, 0)
+        }
+    
+    }
+
+    .btn{
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-align: center;
+        width: 130px;
+        height: 30px;
+        font-size: 1.10rem;
+        transition: ease-out 0.3s;
+        outline: none;
+        border: 1px solid ;
+        position: relative;
+        z-index: 1;
+
+        &:hover{
+            color: #f2f2f2;
+        }
+        &::before{
+            transition: 0.3s all ease;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            right: 50%;
+            bottom: 0;
+            opacity: 0;
+            content: "";
+            background-color: #252525;
+        }
+        &:hover::before{
+            transition: 0.3s all ease;
+            left: 0;
+            right: 0;
+            opacity: 1;
+            z-index: -1;
+        }
+    }
+}
