@@ -22,7 +22,6 @@ export const Home = () => {
                 <Carousel slides={slides}/>
             </div>
                 <DataAxios/>
-          
         </div>
     )
 }
