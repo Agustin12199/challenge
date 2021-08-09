@@ -18,5 +18,11 @@ const loadingAction = () => {
         payload: false
     }
 }
+const responseProductAction = (data) => {
+    return{
+        type: "RESPONSE_DATA_PRODUCT",
+        payload: data
+    }
+}
 
-export {responseAction, errAction, loadingAction}
+export {responseAction, errAction, loadingAction, responseProductAction}
