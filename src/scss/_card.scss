@@ -1,11 +1,17 @@
 .card-container{
     background-color: #f2f2f2;
-    transition: ease all .25s;
+    transition: ease all .2s;
+    text-decoration: none;
     &:hover{
         box-shadow: 4px 4px 5px rgba(56, 56, 56, 0.2);
     }
+    
+    .normal{
+        color:  #252525;
+    }
     .card-title{
-        min-height: 7rem;
+        min-height: 8rem;
+        max-width: 60%;
     }
     .width{
         width: 100%;
@@ -23,6 +29,9 @@
             color: rgba(255, 255, 255, 0)
         }
     
+    }
+    .green{
+        color: green;
     }
 
     .btn{
