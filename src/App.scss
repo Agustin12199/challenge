@@ -3,12 +3,17 @@
 @import "./scss/home";
 @import "./scss/hero";
 @import "./scss/card";
+@import "../node_modules/react-image-gallery/styles/scss/image-gallery.scss";
 
 @font-face {
     font-family: 'Mulish', sans-serif; ;
     src: url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap');
 }
-
+.align-text{
+    &-right{
+        text-align: right;
+    }
+}
 .font{
     &.mulish{
         font-family: Mulish;
@@ -31,4 +36,25 @@
     &-7{
         font-weight: 700;
     }
+}
+button{
+    &.image-gallery-icon{
+        &.image-gallery-fullscreen-button{
+           
+                .image-gallery-svg{
+                    height: 20px !important;
+                }
+                color: #252525;
+                padding: 10px;
+        }
+    }
+    &.image-gallery-play-button{
+        display: none;
+    }
+}
+svg{
+    &.image-gallery-svg{
+        height: 35px !important;
+    }
+    color: #252525;
 }
