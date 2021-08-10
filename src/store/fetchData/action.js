@@ -24,5 +24,11 @@ const responseProductAction = (data) => {
         payload: data
     }
 }
+const responseQuestionsAction = (data) => {
+    return{
+        type: "RESPONSE_DATA_QUESTIONS",
+        payload: data
+    }
+}
 
-export {responseAction, errAction, loadingAction, responseProductAction}
+export {responseAction, errAction, loadingAction, responseProductAction, responseQuestionsAction}
