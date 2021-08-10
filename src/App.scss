@@ -9,6 +9,13 @@
     font-family: 'Mulish', sans-serif; ;
     src: url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap');
 }
+
+.background-default{
+    color: #252525;
+}
+.green{
+    color: green;
+}
 .align-text{
     &-right{
         text-align: right;
@@ -19,7 +26,7 @@
         font-family: Mulish;
     }
     &-color{
-        color: #252525;
+        color: #252525!important;
     }
 }
 .font-w{
@@ -52,9 +59,85 @@ button{
         display: none;
     }
 }
+
 svg{
     &.image-gallery-svg{
         height: 35px !important;
     }
     color: #252525;
 }
+section.background {
+    position: relative;
+    z-index: 1;
+    
+    &:before {
+        border-top: 2px solid #dfdfdf;
+        content:"";
+        margin: 0 auto; 
+        position: absolute;
+        top: 50%; left: 0; right: 0; bottom: 0;
+        width: 95%;
+        z-index: -1;
+    }
+
+    a { 
+        
+        background: #fff; 
+        padding: 0 15px; 
+    }
+}
+
+section.double:before { 
+    
+    border-top: none; 
+}
+
+section.double:after {
+    border-bottom: 1px solid blue;
+    -webkit-box-shadow: 0 1px 0 0 red;
+    -moz-box-shadow: 0 1px 0 0 red;
+    box-shadow: 0 1px 0 0 red;
+    content: "";
+    margin: 0 auto; 
+    position: absolute;
+    top: 45%; left: 0; right: 0;
+    width: 95%;
+    z-index: -1;
+}
+.btns{
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 130px;
+    height: 30px;
+    font-size: 1.10rem;
+    transition: ease-out 0.3s;
+    outline: none;
+    border: 1px solid ;
+    position: relative;
+    z-index: 1;
+    color: #252525;
+    cursor: pointer;
+    &:hover{
+        color: #fff;   
+    }
+    &::before{
+        transition: 0.3s all ease;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        opacity: 0;
+        content: "";
+        background-color: #252525;
+    }
+    &:hover::before{
+        transition: 0.3s all ease;
+        left: 0;
+        right: 0;
+        opacity: 1;
+        z-index: -1;
+    }
+}
+
