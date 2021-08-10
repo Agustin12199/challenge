@@ -7,6 +7,7 @@ import ImageGallery from 'react-image-gallery';
 import { ExpirationDate } from "../components/ExpirationDate";
 import { Table } from "../components/Table";
 import { Form } from "../components/Form";
+import  Questions  from "../components/Questions";
 
 
 function Product({ response, responseData }) {
@@ -81,15 +82,14 @@ function Product({ response, responseData }) {
             
           </div>
           <div>
-  
             <div className="is-flex is-justify-content-flex-end">
               <Table data={responseData}/>
           </div>
           </div>
       </div>
       </div>
-      <Form/>
-     
+        <Form/>
+        <Questions/>
     </div>
   );
 }
