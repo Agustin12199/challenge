@@ -2,12 +2,14 @@ const RESPONSE_DATA = "RESPONSE_DATA"
 const ERROR_DATA = "ERROR_DATA"
 const FINALLY = "FINALLY"
 const RESPONSE_DATA_PRODUCT = 'RESPONSE_DATA_PRODUCT'
+const REPONSE_DATA_QUESTIONS = 'RESPONSE_DATA_QUESTIONS'
 
 const initialState = {
     response: [],
     err: null,
     loading: true,
     responseProduct: [],
+    dataQuestions: []
 }
 
 const data = (state = initialState, action) =>{
@@ -31,6 +33,11 @@ const data = (state = initialState, action) =>{
             return {
                 ...state,
                 responseProduct: action.payload
+            }
+        case REPONSE_DATA_QUESTIONS:
+            return {
+                ...state,
+                dataQuestions: action.payload
             }
         default :
             return state
