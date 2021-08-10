@@ -5,6 +5,9 @@ import axios from "axios";
 import { useParams } from "react-router";
 import ImageGallery from 'react-image-gallery';
 import { ExpirationDate } from "../components/ExpirationDate";
+import { Table } from "../components/Table";
+import { Form } from "../components/Form";
+
 
 function Product({ response, responseData }) {
   const { id } = useParams();
@@ -40,41 +43,53 @@ function Product({ response, responseData }) {
 
   return (
     <div className="container mt-5">
-      <div className="mx-4 card-container columns">
+      <div className="p-4 mx-4 card-container columns">
         <div className="column is-7">
             <ImageGallery items={images} />
         </div>
-        <div className="column font mulish">
-          <h1 className="align-text-right pr-2 is-size-2">
-            {responseData.title}
-          </h1>
-          <div className="pr-2 ">
-            {responseData.offer ? (
-              <p className="font-w-7 green align-text-right pr-2 is-size-3">
-                {responseData.currency} {responseData.offer.price}
-              </p>
-            ) : (
-              <p className="font-w-6 normal pr-2 align-text-right is-size-3">
-                {responseData.currency}
-                {responseData.price}
-              </p>
-            )}
-            <div class="container-price pr-2">
-              {responseData.offer ? (
-                <span className="offer true is-size-4">
-                  {responseData.currency} {responseData.price}
-                </span>
-              ) : (
-                <span className="offer false"></span>
-              )}
+        <div className="column font mulish is-flex is-flex-direction-column is-justify-content-space-around ">
+          <div>
+            <h1 className="align-text-right pr-2 is-size-2">
+              {responseData.title}
+            </h1>
+            <div>
+            {responseData.offer? <ExpirationDate expiration={responseData.offer.expires_at}/>
+                  : ''
+                  }
             </div>
+            <div className="pr-2 ">
+              {responseData.offer ? (
+                <p className="font-w-7 green align-text-right pr-2 is-size-3">
+                  {responseData.currency} {responseData.offer.price}
+                </p>
+              ) : (
+                <p className="font-w-6 normal pr-2 align-text-right is-size-3">
+                  {responseData.currency}
+                  {responseData.price}
+                </p>
+              )}
+              <div class="container-price pr-2">
+                {responseData.offer ? (
+                  <span className="offer true is-size-4">
+                    {responseData.currency} {responseData.price}
+                  </span>
+                ) : (
+                  <span className="offer false"></span>
+                )}
+              </div>
+            </div>
+            
           </div>
-                {responseData.offer? <ExpirationDate expiration={responseData.offer.expires_at}/>
-                : ''
-                }
-        </div>
-       
+          <div>
+  
+            <div className="is-flex is-justify-content-flex-end">
+              <Table data={responseData}/>
+          </div>
+          </div>
       </div>
+      </div>
+      <Form/>
+     
     </div>
   );
 }
