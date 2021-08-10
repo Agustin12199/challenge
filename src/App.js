@@ -4,20 +4,27 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import { Cataloge } from './pages/Cataloge';
+
 import { Home } from './pages/Home';
+import { Navbar } from './components/Navbar';
+import Cataloge from './pages/Cataloge';
+import Product from './pages/Product';
 
 function App() {
   return (
    <Router>
-     <Switch>
-      <Route path="/cataloge">
-        <Cataloge/>
-      </Route>
-      <Route path="/">
-        <Home/>
-      </Route>
-     </Switch>
+      <Navbar/>
+      <Switch>
+        <Route path="/cataloge/:id">
+          <Product/>
+        </Route>
+        <Route path="/cataloge">
+          <Cataloge/>
+        </Route>
+        <Route path="/">
+          <Home/>
+        </Route>
+      </Switch>
    </Router>
   );
 }
