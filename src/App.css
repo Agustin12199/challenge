@@ -323,6 +323,7 @@ html {
   overflow-y: scroll;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
           text-size-adjust: 100%;
 }
@@ -11653,50 +11654,6 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
           transform-origin: left;
 }
 
-section.background {
-  position: relative;
-  z-index: 1;
-}
-section.background:before {
-  border-top: 2px solid #dfdfdf;
-  content: "";
-  margin: 0 auto;
-  /* this centers the line to the full width specified */
-  position: absolute;
-  /* positioning must be absolute here, and relative positioning must be applied to the parent */
-  top: 50%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 95%;
-  z-index: -1;
-}
-section.background a {
-  /* to hide the lines from behind the text, you have to set the background color the same as the container */
-  background: #fff;
-  padding: 0 15px;
-}
-
-section.double:before {
-  /* this is just to undo the :before styling from above */
-  border-top: none;
-}
-
-section.double:after {
-  border-bottom: 1px solid blue;
-  -webkit-box-shadow: 0 1px 0 0 red;
-  box-shadow: 0 1px 0 0 red;
-  content: "";
-  margin: 0 auto;
-  /* this centers the line to the full width specified */
-  position: absolute;
-  top: 45%;
-  left: 0;
-  right: 0;
-  width: 95%;
-  z-index: -1;
-}
-
 .card-container {
   background-color: #f2f2f2;
   -webkit-transition: ease all 0.2s;
@@ -11730,49 +11687,9 @@ section.double:after {
 .card-container .offer.false {
   color: rgba(255, 255, 255, 0);
 }
-.card-container .green {
-  color: green;
-}
-.card-container .btn {
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-align: center;
-  width: 130px;
-  height: 30px;
-  font-size: 1.1rem;
-  -webkit-transition: ease-out 0.3s;
-  transition: ease-out 0.3s;
-  outline: none;
-  border: 1px solid;
-  position: relative;
-  z-index: 1;
-}
-.card-container .btn:hover {
-  color: #f2f2f2;
-}
-.card-container .btn::before {
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  right: 50%;
-  bottom: 0;
-  opacity: 0;
-  content: "";
-  background-color: #252525;
-}
-.card-container .btn:hover::before {
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
-  left: 0;
-  right: 0;
-  opacity: 1;
-  z-index: -1;
-}
 
 .image-gallery-icon {
-  color: #000;
+  color: #fff;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   -webkit-appearance: none;
@@ -11789,7 +11706,7 @@ section.double:after {
 }
 @media (hover: hover) and (pointer: fine) {
   .image-gallery-icon:hover {
-    color: #252525;
+    color: #337ab7;
   }
   .image-gallery-icon:hover .image-gallery-svg {
     -webkit-transform: scale(1.1);
@@ -11797,7 +11714,7 @@ section.double:after {
   }
 }
 .image-gallery-icon:focus {
-  outline: 2px solid #252525;
+  outline: 2px solid #337ab7;
 }
 
 .image-gallery-using-mouse .image-gallery-icon:focus {
@@ -11968,7 +11885,7 @@ section.double:after {
 .image-gallery-slide .image-gallery-description {
   background: rgba(0, 0, 0, 0.4);
   bottom: 70px;
-  color: #252525;
+  color: #fff;
   left: 0;
   line-height: 1;
   padding: 10px 20px;
@@ -12002,7 +11919,7 @@ section.double:after {
      -moz-appearance: none;
           appearance: none;
   background-color: transparent;
-  border: 1px solid #252525;
+  border: 1px solid #fff;
   border-radius: 50%;
   -webkit-box-shadow: 0 2px 2px #1a1a1a;
           box-shadow: 0 2px 2px #1a1a1a;
@@ -12028,22 +11945,22 @@ section.double:after {
 .image-gallery-bullets .image-gallery-bullet:focus {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  background: #252525;
-  border: 1px solid #252525;
+  background: #337ab7;
+  border: 1px solid #337ab7;
 }
 .image-gallery-bullets .image-gallery-bullet.active {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  border: 1px solid #252525;
-  background: #252525;
+  border: 1px solid #fff;
+  background: #fff;
 }
 @media (hover: hover) and (pointer: fine) {
   .image-gallery-bullets .image-gallery-bullet:hover {
-    background: #252525;
-    border: 1px solid #252525;
+    background: #337ab7;
+    border: 1px solid #337ab7;
   }
   .image-gallery-bullets .image-gallery-bullet.active:hover {
-    background: #252525;
+    background: #337ab7;
   }
 }
 
@@ -12141,22 +12058,22 @@ section.double:after {
 }
 .image-gallery-thumbnail.active, .image-gallery-thumbnail:focus {
   outline: none;
-  border: 4px solid #252525;
+  border: 4px solid #337ab7;
 }
 @media (max-width: 768px) {
   .image-gallery-thumbnail.active, .image-gallery-thumbnail:focus {
-    border: 3px solid #252525;
+    border: 3px solid #337ab7;
   }
 }
 @media (hover: hover) and (pointer: fine) {
   .image-gallery-thumbnail:hover {
     outline: none;
-    border: 4px solid #252525;
+    border: 4px solid #337ab7;
   }
 }
 @media (hover: hover) and (pointer: fine) and (max-width: 768px) {
   .image-gallery-thumbnail:hover {
-    border: 3px solid #252525;
+    border: 3px solid #337ab7;
   }
 }
 
@@ -12185,7 +12102,7 @@ section.double:after {
 
 .image-gallery-index {
   background: rgba(0, 0, 0, 0.4);
-  color: #252525;
+  color: #fff;
   line-height: 1;
   padding: 10px 20px;
   position: absolute;
@@ -12204,6 +12121,14 @@ section.double:after {
   font-family: "Mulish", sans-serif;
   src: url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap");
 }
+.background-default {
+  color: #252525;
+}
+
+.green {
+  color: green;
+}
+
 .align-text-right {
   text-align: right;
 }
@@ -12212,7 +12137,7 @@ section.double:after {
   font-family: Mulish;
 }
 .font-color {
-  color: #252525;
+  color: #252525 !important;
 }
 
 .font-w-3 {
@@ -12247,4 +12172,83 @@ svg {
 }
 svg.image-gallery-svg {
   height: 35px !important;
+}
+
+section.background {
+  position: relative;
+  z-index: 1;
+}
+section.background:before {
+  border-top: 2px solid #dfdfdf;
+  content: "";
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 95%;
+  z-index: -1;
+}
+section.background a {
+  background: #fff;
+  padding: 0 15px;
+}
+
+section.double:before {
+  border-top: none;
+}
+
+section.double:after {
+  border-bottom: 1px solid blue;
+  -webkit-box-shadow: 0 1px 0 0 red;
+  box-shadow: 0 1px 0 0 red;
+  content: "";
+  margin: 0 auto;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  right: 0;
+  width: 95%;
+  z-index: -1;
+}
+
+.btns {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 130px;
+  height: 30px;
+  font-size: 1.1rem;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
+  outline: none;
+  border: 1px solid;
+  position: relative;
+  z-index: 1;
+  color: #252525;
+  cursor: pointer;
+}
+.btns:hover {
+  color: #fff;
+}
+.btns::before {
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: #252525;
+}
+.btns:hover::before {
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  z-index: -1;
 }/*# sourceMappingURL=App.css.map */
