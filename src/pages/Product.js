@@ -4,6 +4,7 @@ import { responseProductAction } from "../store/fetchData/action";
 import axios from "axios";
 import { useParams } from "react-router";
 import ImageGallery from 'react-image-gallery';
+import { ExpirationDate } from "../components/ExpirationDate";
 
 function Product({ response, responseData }) {
   const { id } = useParams();
@@ -34,6 +35,7 @@ function Product({ response, responseData }) {
       thumbnail: `${image[2]}`,
     },
   ];
+  
   
 
   return (
@@ -67,7 +69,11 @@ function Product({ response, responseData }) {
               )}
             </div>
           </div>
+                {responseData.offer? <ExpirationDate expiration={responseData.offer.expires_at}/>
+                : ''
+                }
         </div>
+       
       </div>
     </div>
   );
